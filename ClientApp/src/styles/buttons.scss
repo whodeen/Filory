@@ -1,0 +1,83 @@
+@import './base_gui/blocks.scss'; 
+
+//---BASE BUTTON START---
+.app-btn {
+  @extend .text-button;
+  padding: 5px 25px;
+  font-weight: bold;
+}
+
+.app-btn:focus,
+.app-btn:hover {
+  filter: drop-shadow(0px 2px 5px black);
+}
+
+.app-btn:disabled {
+  filter: grayscale(100%);
+}
+//---BASE BUTTON END---
+
+
+//---SUCCESS BUTTON START
+.app-btn-success {
+  @extend .block-success;
+  @extend .app-btn;
+}
+
+.app-btn-success:active {
+  @extend .app-btn;
+  @extend .block-success-active;
+}
+//--SUCCESS BUTTON END---
+
+
+//---INFO BUTTON START
+.app-btn-info {
+  @extend .app-btn;
+  @extend .block-info;
+}
+
+.app-btn-info:active {
+  @extend .app-btn;
+  @extend .block-info-active;
+}
+//--INFO BUTTON END---
+
+
+//---CANCEL BUTTON START
+.app-btn-cancel {
+  @extend .app-btn;
+  @extend .block-cancel;
+}
+
+.app-btn-cancel:active {
+  @extend .app-btn;
+  @extend .block-cancel-active;
+}
+//--CANCEL BUTTON END---
+
+
+//---ALT BUTTON START
+.app-btn-alt {
+  @extend .app-btn;
+  @extend .block-alt;
+}
+
+.app-btn-alt:active {
+  @extend .app-btn;
+  @extend .block-alt-active;
+}
+//--ALT BUTTON END---
+
+
+//---MENU BUTTON START
+.app-btn-menu {
+  @extend .app-btn;
+  @extend .block-menu;
+}
+
+.app-btn-menu:active {
+  @extend .app-btn;
+  @extend .block-menu-active;
+}
+//--MENU BUTTON END---

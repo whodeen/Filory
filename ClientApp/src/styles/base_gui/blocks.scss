@@ -1,0 +1,91 @@
+@import "./backgrounds.scss";
+@import "./borders.scss";
+@import "./text.scss";
+
+// BASIC BLOCK PROPERTIES
+.block {
+    letter-spacing: 2px;
+}
+
+//---STRART OF SUCCESS BLOCK---
+.block-success {
+    @extend .block;
+    @extend .background-success;
+    @extend .border-success;    
+}
+
+.block-success-active {
+    @extend .block-success;
+    @extend .border-success-active;    
+}
+//---END OF SUCCESS BLOCK---
+
+
+//---STRART OF INFO BLOCK---
+.block-info {
+    @extend .block;
+    @extend .background-info;
+    @extend .border-info;    
+}
+
+.block-info-active {
+    @extend .block-info;
+    @extend .border-info-active;    
+}
+//---END OF INFO BLOCK---
+
+
+//---STRART OF CANCEL BLOCK---
+.block-cancel {
+    @extend .block;
+    @extend .background-cancel;
+    @extend .border-cancel;    
+}
+
+.block-cancel-active {
+    @extend .block-cancel;
+    @extend .border-cancel-active;    
+}
+//---END OF CANCEL BLOCK---
+
+
+//---STRART OF ALT BLOCK---
+.block-alt {
+    @extend .block;
+    @extend .background-alt;
+    @extend .border-alt;    
+}
+
+.block-alt-active {
+    @extend .block-alt;
+    @extend .border-alt-active;    
+}
+//---END OF ALT BLOCK---
+
+
+//---STRART OF MENU BLOCK---
+.block-menu {
+    @extend .block;
+    @extend .background-menu;
+    @extend .border-menu;    
+}
+
+.block-menu-active {
+    @extend .block-menu;
+    @extend .border-menu-active;    
+}
+//---END OF MENU BLOCK---
+
+
+//---STRART OF TEXT BLOCK---
+.block-text {
+    @extend .block;
+    @extend .background-text;
+    @extend .border-text;    
+}
+
+.block-text-active {
+    @extend .block-text;
+    @extend .border-text-active;    
+}
+//---END OF TEXT BLOCK---

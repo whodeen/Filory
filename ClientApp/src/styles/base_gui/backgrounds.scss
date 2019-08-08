@@ -1,0 +1,35 @@
+@import "./colors.scss";
+
+$backgrounds: (
+  "gradient-success": linear-gradient(to bottom, map-get($btn-color-basis, "color-success"), darken(map-get($btn-color-basis, "color-success"), 20%)),
+  "gradient-info": linear-gradient(to bottom, map-get($btn-color-basis, "color-info"), darken(map-get($btn-color-basis, "color-info"), 20%)),
+  "gradient-cancel": linear-gradient(to bottom, map-get($btn-color-basis, "color-cancel"), darken(map-get($btn-color-basis, "color-cancel"), 20%)),
+  "gradient-alt": linear-gradient(to bottom, map-get($btn-color-basis, "color-alt"), darken(map-get($btn-color-basis, "color-alt"), 20%)),
+  "gradient-menu": linear-gradient(to bottom, map-get($btn-color-basis, "color-menu"), darken(map-get($btn-color-basis, "color-menu"), 20%)),
+  "gradient-text": linear-gradient(to bottom, map-get($btn-color-basis, "color-text"), darken(map-get($btn-color-basis, "color-text"), 20%)),
+);
+
+.background-success {
+  background:  map-get($backgrounds, "gradient-success");
+}
+
+
+.background-info {
+  background:  map-get($backgrounds, "gradient-info");
+}
+
+.background-cancel {
+  background:  map-get($backgrounds, "gradient-cancel");
+}
+
+.background-alt {
+  background:  map-get($backgrounds, "gradient-alt");
+}
+
+.background-menu {
+  background:  map-get($backgrounds, "gradient-menu");
+}
+
+.background-text {
+  background:  map-get($backgrounds, "gradient-text");
+}

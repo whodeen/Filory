@@ -1,0 +1,34 @@
+@import './base_gui/blocks.scss';
+
+
+.app-field-text {
+    @extend .text;
+    padding: 5px 10px;
+    font-weight: bold;
+}
+
+input.app-field-text:focus {
+    filter: brightness(90%);
+}
+
+.app-field-text-input {
+    @extend .app-field-text;
+    @extend .block-text-active;
+    @extend .text;
+}
+
+.app-field-text-important-input {
+    @extend .app-field-text;
+    @extend .block-text-active;
+    @extend .text-important;
+    text-align: center;
+}
+
+.app-field-text-output {
+    @extend .app-field-text;
+    @extend .block-text;
+    @extend .text;
+    text-align: justify;
+    padding: 5px 10px;
+    font-weight: normal;
+}
