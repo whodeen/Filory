@@ -3,6 +3,7 @@
 //---BASE BUTTON START---
 .app-btn {
   @extend .text-button;
+  display: block;
   padding: 5px 25px;
   font-weight: bold;
 }

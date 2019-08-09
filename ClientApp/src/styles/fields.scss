@@ -13,13 +13,11 @@ input.app-field-text:focus {
 
 .app-field-text-input {
     @extend .app-field-text;
-    @extend .block-text-active;
     @extend .text;
 }
 
 .app-field-text-important-input {
     @extend .app-field-text;
-    @extend .block-text-active;
     @extend .text-important;
     text-align: center;
 }
