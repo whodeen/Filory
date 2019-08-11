@@ -1,6 +1,6 @@
 @import '../../styles.scss';
 
-.back-block {
+.backg-block {
     height: 96vh;
     max-width: 100%;
     background-image: url(../../img/auth/auth-background.jpg);
@@ -28,6 +28,7 @@
 
     label {
         @extend .text-important;
+        color: white;
         display: block;
         text-align: center;
     }
