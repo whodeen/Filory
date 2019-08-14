@@ -1,9 +1,14 @@
 @import '../../styles.scss';
 
 .backg-block {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    overflow: auto;
     height: 96vh;
     max-width: 100%;
-    background-image: url(../../img/auth/auth-background.jpg);
+    background-image: url(src/assets/img/auth-background.jpg); 
     background-size: cover;
     background-color: black;
     background-position: center;
@@ -17,37 +22,53 @@
     @extend .block-alt;
     @extend .background-alt;
     @extend .text;
+
     display: flex;
     flex-direction: column;
     padding: 20px;
-    margin: 25vh auto;
-    min-width: 200px;
+    min-width: 250px;
     max-width: 250px;
     filter: drop-shadow(0px 10px 3px black) opacity(85%); 
-    
+    transition: all;
+    transition-duration: 1s;
 
     label {
         @extend .text-important;
         color: white;
         display: block;
         text-align: center;
+        margin-bottom: 7px;
     }
 
     input {
         @extend .app-field-text-important-input;
-        @extend .block-text;
-
+        @extend .block-text; 
     }
 
-    * {
-        margin-bottom: 10px;
-    }
-    
     .buttons-container {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         margin-top: 20px;
     }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        margin-bottom: 15px;
+    }
+
 }
 
+.text-warning {
+    display: block;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.712);
+    text-align: center;
+    filter: opacity(90%);
+    color: white;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: -12px;
+}

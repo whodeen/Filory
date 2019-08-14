@@ -13,5 +13,12 @@
 .text-button {
   @extend .text;
   color: white;
-  text-shadow: 1px 1px 2px black, 0 0 1em rgb(187, 78, 78);
+  text-shadow: 1px 1px 2px black, 0 0 2px rgb(187, 78, 78);
+}
+
+.text-warning {
+  @extend .text;
+  font-weight: bold;
+  color: #d63c21;
+  text-shadow: 1px 1px 2px black;
 }

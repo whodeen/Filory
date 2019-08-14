@@ -6,12 +6,15 @@
   display: block;
   padding: 5px 25px;
   font-weight: bold;
-}
+  transition-property: filter;
+  transition-duration: 140ms;
 
+}
 .app-btn:focus,
 .app-btn:hover {
   filter: drop-shadow(0px 5px 2px black);
 }
+
 
 .app-btn:hover {
   cursor: pointer;

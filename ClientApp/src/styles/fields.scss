@@ -5,10 +5,12 @@
     @extend .text;
     padding: 5px 10px;
     font-weight: bold;
+    transition-property: filter;
+    transition-duration: 500ms;
 }
 
 input.app-field-text:focus {
-    filter: brightness(90%);
+    filter: brightness(70%);
 }
 
 .app-field-text-input {
