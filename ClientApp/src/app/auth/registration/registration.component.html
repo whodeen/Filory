@@ -50,6 +50,7 @@
     </span>
     </div>
 
+  <!-- USER PASSWORD BLOCK END -->
     <div class="form-group">
       <label for='confirm-password'>Confirm password</label>
       <input type=password id=user-confirm-password formControlName="ConfirmPassword">
@@ -64,8 +65,9 @@
       </span>
     </div>
   </div>
-  <!-- USER EMAIL BLOCK END -->
+  <!-- USER PASSWORD BLOCK END -->
   
+  <!-- CONTROLL BUTTONS BLOCK START-->>
   <div class='buttons-container'>
     <button type="submit" class='app-btn-success' 
     [disabled]="!service.formModel.valid">
@@ -73,6 +75,6 @@
     </button>
     <button class='app-btn-cancel'>Cancel</button>
  </div>
+  <!-- CONTROLL BUTTONS BLOCK END-->>
 
- 
 </form>
