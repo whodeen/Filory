@@ -1,0 +1,80 @@
+<form [formGroup]="service.formModel" autocomplete="off" class='auth-form' (submit)="onSubmit()">
+  
+  <h2 class="visualy-hidden">Registration form</h2>    
+  
+  <!-- USER LOGIN BLOCK START-->
+  <div class="form-group">
+    <label for='user-login' >Login</label>
+    <input type=text id=user-login formControlName="Login">
+    <span class="text-warning" *ngIf="service.formModel.get('Login').touched 
+    && service.formModel.get('Login').errors?.required">
+      Login is required
+    </span>
+  </div>
+  <!-- USER LOGIN BLOCK END-->
+
+  <!-- CHARACTER NAME BLOCK START-->
+  <div class="form-group">
+    <label for='user-character'>Character name</label>
+    <input type=text id=user-character formControlName="UserName">
+    <span class="text-warning" *ngIf="service.formModel.get('UserName').touched 
+    && service.formModel.get('UserName').errors?.required">
+      Character name is required
+    </span>
+  </div>
+  <!-- CHARACTER NAME BLOCK END-->
+
+  <!-- USER EMAIL BLOCK START -->
+  <div class="form-group">
+    <label for='user-email'>E-mail</label>
+    <input type=email id=user-email formControlName="Email">
+    <span class="text-warning" *ngIf="service.formModel.get('Email').touched 
+    && service.formModel.get('Email').errors?.email">
+      Email is incorrect
+    </span>
+  </div>
+  <!-- USER EMAIL BLOCK END -->
+
+  <!-- USER PASSWORD BLOCK START -->
+  <div formGroupName="Passwords">
+    <div class="form-group">
+      <label for='user-password'>Password</label>
+      <input type=password id=user-password formControlName="Password">
+      <span class="text-warning" *ngIf="service.formModel.get('Passwords.Password').touched 
+      && service.formModel.get('Passwords.Password').errors?.required">
+        Password is required
+    </span>
+      <span class="text-warning" *ngIf="service.formModel.get('Passwords.Password').touched 
+      && service.formModel.get('Passwords.Password').errors?.minlength">
+        Password must be at least 6 symbols
+    </span>
+    </div>
+
+  <!-- USER PASSWORD BLOCK END -->
+    <div class="form-group">
+      <label for='confirm-password'>Confirm password</label>
+      <input type=password id=user-confirm-password formControlName="ConfirmPassword">
+      <span class="text-warning" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched 
+      && service.formModel.get('Passwords.ConfirmPassword').errors?.required">
+        Please confirm your password
+
+      </span>
+      <span class="text-warning" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched 
+      && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">
+        Password missmatch
+      </span>
+    </div>
+  </div>
+  <!-- USER PASSWORD BLOCK END -->
+  
+  <!-- CONTROLL BUTTONS BLOCK START-->>
+  <div class='buttons-container'>
+    <button type="submit" class='app-btn-success' 
+    [disabled]="!service.formModel.valid">
+      Sign Up
+    </button>
+    <button class='app-btn-cancel'>Cancel</button>
+ </div>
+  <!-- CONTROLL BUTTONS BLOCK END-->>
+
+</form>
