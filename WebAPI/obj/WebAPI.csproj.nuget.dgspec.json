@@ -1,26 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "E:\\My Projects\\Filory\\WebAPI\\WebAPI.csproj": {}
+    "C:\\New folder\\Filory\\WebAPI\\WebAPI.csproj": {}
   },
   "projects": {
-    "E:\\My Projects\\Filory\\WebAPI\\WebAPI.csproj": {
+    "C:\\New folder\\Filory\\WebAPI\\WebAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\My Projects\\Filory\\WebAPI\\WebAPI.csproj",
+        "projectUniqueName": "C:\\New folder\\Filory\\WebAPI\\WebAPI.csproj",
         "projectName": "WebAPI",
-        "projectPath": "E:\\My Projects\\Filory\\WebAPI\\WebAPI.csproj",
-        "packagesPath": "C:\\Users\\Pure\\.nuget\\packages\\",
-        "outputPath": "E:\\My Projects\\Filory\\WebAPI\\obj\\",
+        "projectPath": "C:\\New folder\\Filory\\WebAPI\\WebAPI.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\New folder\\Filory\\WebAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Pure\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"

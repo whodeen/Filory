@@ -33,11 +33,7 @@ namespace WebAPI
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<AuthenticationContext>(options => options.UseMySql(dbConnectionString, 
-                mySqlOptions => {
-                    mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql);
-                }
-            ));
+            services.AddDbContext<AuthenticationContext>(options => options.UseSqlServer(dbConnectionString));
 
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<AuthenticationContext>();
