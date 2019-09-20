@@ -57,7 +57,6 @@
       <span class="text-warning" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched 
       && service.formModel.get('Passwords.ConfirmPassword').errors?.required">
         Please confirm your password
-
       </span>
       <span class="text-warning" *ngIf="service.formModel.get('Passwords.ConfirmPassword').touched 
       && service.formModel.get('Passwords.ConfirmPassword').errors?.passwordMismatch">
@@ -67,14 +66,14 @@
   </div>
   <!-- USER PASSWORD BLOCK END -->
   
-  <!-- CONTROLL BUTTONS BLOCK START-->>
+  <!-- CONTROLL BUTTONS BLOCK START-->
   <div class='buttons-container'>
+    <button class='app-btn-cancel' routerLink='/auth/login' >Cancel</button>
     <button type="submit" class='app-btn-success' 
     [disabled]="!service.formModel.valid">
       Sign Up
     </button>
-    <button class='app-btn-cancel'>Cancel</button>
  </div>
-  <!-- CONTROLL BUTTONS BLOCK END-->>
+  <!-- CONTROLL BUTTONS BLOCK END-->
 
 </form>

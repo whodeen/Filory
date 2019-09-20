@@ -1,24 +1,23 @@
-<section class='auth-form'>
 
+  <form  #form='ngForm' autocomplete="off" class='auth-form' (submit)="onSubmit(form)">
   <!-- USER LOGIN BLOCK START-->
   <div class="form-group">
     <label for='user-login'>Login</label>
-    <input type=text id=user-login>
+    <input #UserName="ngModel" name="UserName" [(ngModel)]="formModel.UserName" type=text id=user-login>
   </div>
     <!-- USER LOGIN BLOCK END-->
 
   <!-- USER PASSWORD BLOCK END-->
   <div class="form-group">
     <label for='password'>Password</label>
-    <input type=password id=user-password>
+    <input #Password="ngModel" name="Password" [(ngModel)]="formModel.Password" type=password id=user-password>
   </div>
   <!-- USER PASSWORD BLOCK END-->
 
   <!-- CONTROLL BUTTONS BLOCK START-->
   <div class='buttons-container'>
-    <button class='app-btn-success'>Log in</button>
-    <button class='app-btn-success'>Sign Up</button>
+    <button class='app-btn-success' routerLink='/auth/registration'>Sign Up</button>
+    <button type='submit' class='app-btn-success'>Log in</button>
   </div>
   <!-- CONTROLL BUTTONS BLOCK END-->
-
-</section>
+</form>
