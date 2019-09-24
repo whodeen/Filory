@@ -13,6 +13,9 @@ using Microsoft.Extensions.Options;
 using WebAPI.Models;
 using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using System.Text;
+using Microsoft.IdentityModel.Tokens;
 
 namespace WebAPI
 {
@@ -28,16 +31,15 @@ namespace WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Inject AppSettings
+            services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
+
             var dbSettingsSection = Configuration.GetSection("ConnectionStrings");
             var dbConnectionString = dbSettingsSection["IdentityConnection"];
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddDbContext<AuthenticationContext>(options => options.UseMySql(dbConnectionString, 
-                mySqlOptions => {
-                    mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql);
-                }
-            ));
+            services.AddDbContext<AuthenticationContext>(options => options.UseSqlServer(dbConnectionString));
 
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<AuthenticationContext>();
@@ -50,6 +52,31 @@ namespace WebAPI
                 options.Password.RequireUppercase = false;
                 options.Password.RequiredLength = 4;
             });
+
+            services.AddCors();
+
+            //JWT Authentication
+
+            var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSettings:JWT_Secret"].ToString());
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = false;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+                    ClockSkew = TimeSpan.Zero
+                };
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -61,7 +88,11 @@ namespace WebAPI
             }
 
             app.UseCors(builder =>
-            builder.WithOrigins("http://localhost:4200").AllowAnyHeader().AllowAnyMethod());
+            builder.WithOrigins(Configuration["ApplicationSettings:Client_URL"].ToString())
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            
+            );
 
             app.UseAuthentication();
 
