@@ -10,6 +10,7 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { AppRoutingModule } from './app-routing.module';
 import { AuthService } from './shared/auth.service';
 import { GameComponent } from './game/game.component';
+import { MiniProfileComponent } from './game/mini-profile/mini-profile.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { GameComponent } from './game/game.component';
     AuthComponent,
     LoginComponent,
     RegistrationComponent,
-    GameComponent
+    GameComponent,
+    MiniProfileComponent
   ],
   imports: [
     BrowserModule,
