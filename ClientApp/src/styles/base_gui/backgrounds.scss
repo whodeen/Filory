@@ -1,35 +1,42 @@
 @import "./colors.scss";
 
-$backgrounds: (
-  "gradient-success": linear-gradient(to bottom, map-get($btn-color-basis, "color-success"), darken(map-get($btn-color-basis, "color-success"), 20%)),
-  "gradient-info": linear-gradient(to bottom, map-get($btn-color-basis, "color-info"), darken(map-get($btn-color-basis, "color-info"), 20%)),
-  "gradient-cancel": linear-gradient(to bottom, map-get($btn-color-basis, "color-cancel"), darken(map-get($btn-color-basis, "color-cancel"), 20%)),
-  "gradient-alt": linear-gradient(to bottom, map-get($btn-color-basis, "color-alt"), darken(map-get($btn-color-basis, "color-alt"), 20%)),
-  "gradient-menu": linear-gradient(to bottom, map-get($btn-color-basis, "color-menu"), darken(map-get($btn-color-basis, "color-menu"), 20%)),
-  "gradient-text": linear-gradient(to bottom, map-get($btn-color-basis, "color-text"), darken(map-get($btn-color-basis, "color-text"), 20%)),
-);
+@mixin background-linear ($color) {
+  $maped-color: map-get($btn-color-basis, $color); 
+  background: linear-gradient(to bottom, $maped-color, darken($maped-color, 20%));
+}
 
-.background-success {
-  background:  map-get($backgrounds, "gradient-success");
+@mixin background-radial ($color) {
+  $maped-color: map-get($btn-color-basis, $color); 
+  background: radial-gradient($maped-color, darken($maped-color, 20%));
 }
 
 
+.background-success {
+  @include background-linear("color-success");
+}
+
 .background-info {
-  background:  map-get($backgrounds, "gradient-info");
+  @include background-linear("color-info");
 }
 
 .background-cancel {
-  background:  map-get($backgrounds, "gradient-cancel");
+  @include background-linear("color-cancel");
 }
 
 .background-alt {
-  background:  map-get($backgrounds, "gradient-alt");
+  @include background-linear("color-alt");
 }
 
 .background-menu {
-  background:  map-get($backgrounds, "gradient-menu");
+  @include background-linear("color-menu");
 }
 
 .background-text {
-  background:  map-get($backgrounds, "gradient-text");
+  @include background-linear("color-text");
 }
+
+// "color-success": #3ec576,
+// "color-info": #ffff00,
+// "color-cancel": #d63c21,
+// "color-alt": #5f5d5f,
+// "color-menu": #613cc5,
