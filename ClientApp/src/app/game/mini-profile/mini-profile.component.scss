@@ -1,0 +1,134 @@
+@import '../../../styles/base_gui/blocks.scss';
+@import '../../../styles/base_gui/text.scss';
+@import '../../../styles/buttons.scss';
+
+.char-profile {
+    @extend .block-alt;
+    @extend .text-plain;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    padding: 10px;
+
+    top: 20px;
+    left: 20px;
+
+    .char-profile-header {
+        margin-bottom: 5px;
+    }
+
+    .char-name {
+        margin: 0;
+        display: inline-block;
+        text-transform: uppercase;
+        color: white;
+        justify-items: center;
+    }
+
+    .char-lvl {
+        position: absolute;
+        right: 10px;
+        line-height: 12px;
+        font-size: 12px;
+    }
+
+    .char-info {
+        display:flex;
+        flex-direction: row;
+        font-size: 12px;
+        margin-bottom: 5px;
+        .char-avatar {
+            width: 50%;
+            height: 100px;
+            background-image: url('../../../assets/img/mocks/avatar.png');
+            background-size: cover;
+        }
+
+        .char-summary {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 50%;
+            padding-left: 5px;
+
+            .char-status {
+                text-align: center;
+
+                .char-health-bar {
+                    @extend .block-cancel;
+                    margin-bottom: 5px;
+                }
+                .char-energy-bar {
+                    @extend .block-menu;
+                }
+            }
+
+            .char-money {
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-rows: auto auto;
+
+                .char-money-name {
+                    text-align: left;
+                }
+                .char-money-amount {
+                    text-align: right;
+                }
+            }
+        }
+
+    }
+
+    .char-stats {
+        display: grid;
+        width: 100%;
+        
+        font-size: 14px;
+        align-self: center;
+        text-align: center;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto;
+        
+        .char-stats-amount {
+            @extend .block-alt;
+            margin: 0 3px;
+        }
+
+        .char-stats-upgrade {
+            @extend .app-btn-info;
+            padding: 0;
+            margin: 4px 3px;
+            vertical-align: middle;
+            line-height: 15px;
+            height: 15px;
+            font-size: 12px;
+        }
+    }
+
+
+    .char-exp-bar {
+        @extend .block-alt;
+        position: relative;
+        margin-top: 5px;
+
+        .char-exp {
+         @extend .block-success;
+            vertical-align: middle;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 0px;
+            line-height: 10px;
+            width: 70%;
+        }
+        .char-exp-value {
+            margin: 0 auto;
+            top: 1px;
+            margin-left: auto;
+            font-size: 10px;
+        }
+    }
+
+
+}
+

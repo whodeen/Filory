@@ -1,5 +1,5 @@
 
-  <form  #form='ngForm' autocomplete="off" class='auth-form' (submit)="onSubmit(form)">
+<form  #form='ngForm' autocomplete="off" class='auth-form' (submit)="onSubmit(form)">
   <!-- USER LOGIN BLOCK START-->
   <div class="form-group">
     <label for='user-login'>Login</label>
@@ -16,8 +16,8 @@
 
   <!-- CONTROLL BUTTONS BLOCK START-->
   <div class='buttons-container'>
-    <button class='app-btn-success' routerLink='/auth/registration'>Sign Up</button>
     <button type='submit' class='app-btn-success'>Log in</button>
+    <button class='app-btn-success' routerLink='/auth/registration'>Sign Up</button>
   </div>
   <!-- CONTROLL BUTTONS BLOCK END-->
 </form>

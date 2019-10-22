@@ -1,97 +1,78 @@
 @import "./colors.scss";
 
-//---BASE BORDER START---
-.border {
+@mixin border-basis() {
   border: none;
   outline: none;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
 }
-//---BASE BORDER END---
+
+@mixin border($color) {
+  @include border-basis();
+  $maped-color: map-get($btn-color-basis, $color);
+
+  box-shadow: 0 0 0 2px darken($maped-color, 20%);
+  box-shadow: inset 0 0 0 2px darken($maped-color, 20%);
+}
+
+@mixin border-active($color) {
+  @include border-basis();
+  $maped-color: map-get($btn-color-basis, $color);
+
+  box-shadow: inset 0 2px 2px 4px darken($maped-color, 20%);
+}
 
 
-//---START OF BORDER SUCCESS---
 .border-success {
-  @extend .border;
-  box-shadow: 0 0 0 2px darken(map-get($btn-color-basis, "color-success"), 20%);
-  box-shadow: inset 0 0 0 2px darken(map-get($btn-color-basis, "color-success"), 20%);
+  @include border("color-success");
 }
 
 .border-success-active {
-  @extend .border;
-  box-shadow: inset 0 2px 2px 4px darken(map-get($btn-color-basis, "color-success"), 20%);
+  @include border-active("color-success");
 }
-//---END OF BORDER SUCCESS---
 
 
-//---START OF BORDER INFO---
 .border-info {
-  @extend .border;
-  box-shadow: 0 0 0 2px darken(map-get($btn-color-basis, "color-info"), 20%);
-  box-shadow: inset 0 0 0 2px darken(map-get($btn-color-basis, "color-info"), 20%);
+  @include border("color-info");
 }
 
 .border-info-active {
-  @extend .border;
-  box-shadow: inset 0 2px 2px 4px darken(map-get($btn-color-basis, "color-info"), 20%);
+  @include border-active("color-info");
 }
-//---END OF BORDER INFO---
 
 
-//---START OF BORDER CANCEL---
 .border-cancel {
-  @extend .border;
-  box-shadow: 0 0 0 2px darken(map-get($btn-color-basis, "color-cancel"), 20%);
-  box-shadow: inset 0 0 0 2px darken(map-get($btn-color-basis, "color-cancel"), 20%);
+  @include border("color-cancel");
 }
 
 .border-cancel-active {
-  @extend .border;
-  box-shadow: inset 0 2px 2px 4px darken(map-get($btn-color-basis, "color-cancel"), 20%);
+  @include border-active("color-cancel");
 }
-//---END OF BORDER CANCEL---
 
 
-
-//---START OF BORDER ALT---
 .border-alt {
-  @extend .border;
-  box-shadow: 0 0 0 2px darken(map-get($btn-color-basis, "color-alt"), 20%);
-  box-shadow: inset 0 0 0 2px darken(map-get($btn-color-basis, "color-alt"), 20%);
+  @include border("color-alt");
 }
 
 .border-alt-active {
-  @extend .border;
-  box-shadow: inset 0 2px 2px 4px darken(map-get($btn-color-basis, "color-alt"), 20%);
+  @include border-active("color-alt");
 }
-//---END OF BORDER ALT---
 
 
-
-//---START OF BORDER MENU---
 .border-menu {
-  @extend .border;
-  box-shadow: 0 0 0 2px darken(map-get($btn-color-basis, "color-menu"), 20%);
-  box-shadow: inset 0 0 0 2px darken(map-get($btn-color-basis, "color-menu"), 20%);
+  @include border("color-menu");
 }
 
 .border-menu-active {
-  @extend .border;
-  box-shadow: inset 0 2px 2px 4px darken(map-get($btn-color-basis, "color-menu"), 20%);
+  @include border-active("color-menu");
 }
-//---END OF BORDER MENU---
 
 
-//---START OF BORDER TEXT---
 .border-text {
-  @extend .border;
-  box-shadow: 0 0 0 2px darken(map-get($btn-color-basis, "color-text"), 20%);
-  box-shadow: inset 0 0 0 2px darken(map-get($btn-color-basis, "color-text"), 20%);
+  @include border("color-text");
 }
 
 .border-text-active {
-  @extend .border;
-  box-shadow: inset 0 2px 2px 4px darken(map-get($btn-color-basis, "color-text"), 20%);
+  @include border-active("color-text");
 }
-//---END OF BORDER TEXT---
